@@ -10,6 +10,17 @@ export let presets = {
   lt:  (a, b) => a < b,
   lte: (a, b) => a <= b,
   contains: (a, b) => a.indexOf(b) !== -1,
+  containsAny(a, b) {
+    let keywords = b.split(" ");
+    if(keywords.length){
+     keywords.forEach(keyword => {
+       if(a.indexOf(keyword) === -1{
+          return false;
+       }
+     })
+    }
+    return true;
+  },
   startsWith: (a, b) => a.lastIndexOf(b, 0) === 0,
   endsWith(a, b) {
     let pos = a.length - b.length;
